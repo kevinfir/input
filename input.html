@@ -22,8 +22,8 @@
             let url = "https://docs.google.com/forms/d/e/1FAIpQLSdqZ40JRyrsoBQbH1VqW_NsfnOAeAuPQ27CYDOebPmz4SFIBQ/formResponse?usp=pp_url&entry.1095757402="
             let parameterTemp  = "&entry.172089492="
             let parameterFever = "&entry.415342485="
-            let seatInput = document.getElementById("seatInput").value;
-            let temperatureInput = document.getElementById("temperatureInput").value;
+            let seatInput = document.getElementById("seatInput");
+            let temperatureInput = document.getElementById("temperatureInput");
             let fever = "";
 
             if (parseFloat(temperatureInput) >= 37.5) {
@@ -33,7 +33,7 @@
             }
         
             url = url + seatInput + parameterTemp + temperatureInput + parameterFever + fever;
-
+            
             return url
         }
     </script>
