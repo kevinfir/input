@@ -6,24 +6,23 @@
     <title>Document</title>
 </head>
 <body>
+    <form id="myform">
+        <div>發燒統計表</div>
+        <input type="text" placeholder="座號" id="seatInput" name="座號" /><br>
+        <input type="text" placeholder="體溫" id="temperatureInput" name="體溫" /><br>
+        <input type="text" placeholder="是否發燒" id="fever" name="是否發燒" /><br>
+        <button type="submit">SUBMIT</button>
+    </form>
 
-    <form>
-        
-          <div>發燒統計表 </div>
-          <input type="text" placeholder="座號" id="seatInput" /><br>
-          <input type="text" placeholder="體溫" id="temperatureInput" /><br>
-          <input type="text" placeholder="是否發燒" id ="fever" /><br>
-          <button type="submit" onclick=work()>SUBMIT</button>
-          
-        
-      </form>
     <script>
-        function work(){
-            let url = "https://docs.google.com/forms/d/e/1FAIpQLSdqZ40JRyrsoBQbH1VqW_NsfnOAeAuPQ27CYDOebPmz4SFIBQ/formResponse?usp=pp_url&entry.1095757402="
-            let parameterTemp  = "&entry.172089492="
-            let parameterFever = "&entry.415342485="
-            let seatInput = document.getElementById("seatInput");
-            let temperatureInput = document.getElementById("temperatureInput");
+        document.getElementById("myform").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            let url = "https://docs.google.com/forms/d/e/1FAIpQLSdqZ40JRyrsoBQbH1VqW_NsfnOAeAuPQ27CYDOebPmz4SFIBQ/formResponse?usp=pp_url&entry.1095757402=";
+            let parameterTemp = "&entry.172089492=";
+            let parameterFever = "&entry.415342485=";
+            let seatInput = document.getElementById("seatInput").value;
+            let temperatureInput = document.getElementById("temperatureInput").value;
             let fever = "";
 
             if (parseFloat(temperatureInput) >= 37.5) {
@@ -31,12 +30,10 @@
             } else {
                 fever = "沒發燒";
             }
-        
+
             url = url + seatInput + parameterTemp + temperatureInput + parameterFever + fever;
-            
-            return url
-        }
-        
+            window.location.href = url;
+        });
     </script>
 </body>
 </html>
