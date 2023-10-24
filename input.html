@@ -24,7 +24,8 @@
             let parameterFever = "&entry.415342485="
             let seatInput = document.getElementById("seatInput").value;
             let temperatureInput = document.getElementById("temperatureInput").value;
-            if(temperatureInput.value>=37.5){
+            let fever="";
+            if(parseFloat(temperatureInput)>=37.5){
                 fever = "發燒";
             }
             else{
