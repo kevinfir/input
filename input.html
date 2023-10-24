@@ -13,7 +13,7 @@
           <input type="text" placeholder="座號" id="seatInput" /><br>
           <input type="text" placeholder="體溫" id="temperatureInput" /><br>
           <input type="text" placeholder="是否發燒" id="fever" /><br>
-          <button type="submitBtn" >SUBMIT</button>
+          <button type="submitBtn" onclick="work();">SUBMIT</button>
           
         
       </form>
@@ -36,9 +36,7 @@
             url = url+seatInput+parameterTemp+temperatureInput+parameterFever+fever;
             return url;    
         }    
-        document.addEventListener( 'submitBtn', function( event ) {
-        location = work();
-        }, false );
+        
        
     </script>
 </body>
