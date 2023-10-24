@@ -24,21 +24,19 @@
             let parameterFever = "&entry.415342485="
             let seatInput = document.getElementById("seatInput").value;
             let temperatureInput = document.getElementById("temperatureInput").value;
-            let fever="";
-            if(parseFloat(temperatureInput)>=37.5){
+            let fever = "";
+
+            if (parseFloat(temperatureInput) >= 37.5) {
                 fever = "發燒";
-            }
-            else{
+            } else {
                 fever = "沒發燒";
-            };
-            var submitBtn = document.querySelector(".submitBtn");
-            
+            }
         
-            url = url+seatInput+parameterTemp+temperatureInput+parameterFever+fever;
+            url = url + seatInput + parameterTemp + temperatureInput + parameterFever + fever;
+
+            // 使用重定向将用户发送到 Google 表单
             window.location.href = url;
-        }    
-      
-       
+        }
     </script>
 </body>
 </html>
