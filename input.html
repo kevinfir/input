@@ -12,8 +12,8 @@
           <div>發燒統計表 </div>
           <input type="text" placeholder="座號" id="seatInput" /><br>
           <input type="text" placeholder="體溫" id="temperatureInput" /><br>
-          <input type="text" placeholder="是否發燒" id "fever" /><br>
-          <button type="submit" onclick="work();">SUBMIT</button>
+          <input type="text" placeholder="是否發燒" id ="fever" /><br>
+          <button type="submit" onclick="location.href=work();">SUBMIT</button>
           
         
       </form>
@@ -34,7 +34,7 @@
         
             url = url + seatInput + parameterTemp + temperatureInput + parameterFever + fever;
 
-            window.location.href = url;
+            return url
         }
     </script>
 </body>
