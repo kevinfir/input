@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+        
+          <div>發燒統計表 </div>
+          <input type="text" placeholder="座號" id="seatInput" /><br>
+          <input type="text" placeholder="體溫" id="temperatureInput" /><br>
+          <input type="text" placeholder="是否發燒" id="fever" /><br>
+          <button type="submitBtn" >SUBMIT</button>
+          
+        
+      </form>
+    <script>
+        function work(){
+            let url = "https://docs.google.com/forms/d/e/1FAIpQLSdqZ40JRyrsoBQbH1VqW_NsfnOAeAuPQ27CYDOebPmz4SFIBQ/formResponse?usp=pp_url&entry.1095757402="
+            let parameterTemp  = "&entry.172089492="
+            let parameterFever = "&entry.415342485="
+            let seatInput = document.getElementById("seatInput").value;
+            let temperatureInput = document.getElementById("temperatureInput").value;
+            if(temperatureInput.value>=37.5){
+                fever = "發燒";
+            }
+            else{
+                fever = "沒發燒";
+            };
+            var submitBtn = document.querySelector(".submitBtn");
+            
+        
+            url = url+seatInput+parameterTemp+temperatureInput+parameterFever+fever;
+            return url;    
+        }    
+        document.addEventListener( 'submitBtn', function( event ) {
+        location = work();
+        }, false );
+       
+    </script>
+</body>
+</html>
