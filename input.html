@@ -11,14 +11,15 @@
         <input type="text" placeholder="座號" id="seatInput" name="座號" /><br>
         <input type="text" placeholder="體溫" id="temperatureInput" name="體溫" /><br>
         <input type="text" placeholder="是否發燒" id="fever" name="是否發燒" /><br>
-        <button type="submit">SUBMIT</button>
+        <button type="submit" onclick="location.href=work()">SUBMIT</button>
     </form>
 
     <script>
+        function work(){
         document.getElementById("myform").addEventListener("submit", function(event) {
             event.preventDefault(); // Prevent the default form submission
 
-            let url = "https://docs.google.com/forms/d/e/1FAIpQLSdqZ40JRyrsoBQbH1VqW_NsfnOAeAuPQ27CYDOebPmz4SFIBQ/formResponse?usp=pp_url&entry.1095757402=";
+            var url = "https://docs.google.com/forms/d/e/1FAIpQLSdqZ40JRyrsoBQbH1VqW_NsfnOAeAuPQ27CYDOebPmz4SFIBQ/formResponse?usp=pp_url&entry.1095757402=";
             let parameterTemp = "&entry.172089492=";
             let parameterFever = "&entry.415342485=";
             let seatInput = document.getElementById("seatInput").value;
@@ -32,8 +33,12 @@
             }
 
             url = url + seatInput + parameterTemp + temperatureInput + parameterFever + fever;
-            window.location.href = url;
+                
         });
+        return url
+    }
     </script>
 </body>
 </html>
+
+
